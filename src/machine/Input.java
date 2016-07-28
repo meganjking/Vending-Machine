@@ -15,6 +15,7 @@ public class Input {
 
         input = in.nextInt();
         return input;
+
     }
 
     public float getInputMoney(){
@@ -24,4 +25,5 @@ public class Input {
         input = in.nextFloat();
         return input;
     }
+
 }

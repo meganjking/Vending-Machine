@@ -4,36 +4,51 @@ package machine;
  * Created by Megan on 7/26/2016.
  */
 public class Bank {
-    boolean flag;
-    int selection;
-    double cash;
-    Goods[] goods;
+    private static Bank uniqueInstance;
+    double bankFunds = 0;
+    double cashInserted;
 
-    public void acceptMoney(double cash){
-        this.cash = cash;
+    private Bank(){}
+
+    public static synchronized Bank getInstance(){
+        if(uniqueInstance == null){
+            uniqueInstance = new Bank();
+        }
+        return uniqueInstance;
+    }
+
+    public void acceptMoney(double cash){ // can change to float
+        this.cashInserted += cash;
+        bankFunds += cash;
     }
 
     public double getMoney(){
-        return cash;
+        return cashInserted;
+    }
+
+    public void clearTransaction(){
+        cashInserted = 0.0;
     }
 
     public boolean checkMoney(int selection, double cash, Goods[] goods){
-// Don't need these since we're not updating the bank values here
-//        this.selection = selection;
-//        this.cash = cash;
-//        this.goods = goods;
-
         if(cash >= goods[selection-1].getPrice()){
-            flag = true;
+            return true;
         }else {
-            System.out.println("Insufficient money inserted. Please insert more money.");
-            flag = false;
+            System.out.println("Insufficient funds. Please insert more money.");
+            return false;
         }
-        return flag;
     }
 
     public double changeCalculator(int selection, double cash, Goods[] goods){
+        double refund;
+        refund = cash - goods[selection-1].getPrice();
+        bankFunds -= refund;
 
-        return (cash - goods[selection-1].getPrice());
+        return refund;
+
+    }
+
+    public void printFunds(){
+        System.out.println("The vending machine has collected $" + bankFunds);
     }
 }
