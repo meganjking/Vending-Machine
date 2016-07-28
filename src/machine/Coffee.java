@@ -10,6 +10,7 @@ public class Coffee extends Beverage {
     public Coffee(int quantity, double price){
         this.quantity = quantity;
         this.price = price;
+        bodilyBehavior = new BodyAlert();
     }
 
     public String getDescription(){

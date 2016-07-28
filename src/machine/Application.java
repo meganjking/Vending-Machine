@@ -28,7 +28,7 @@ public class Application {
 
         // Fill up the vending machine
         Goods[] goods = new Goods[vendingMachineStuff.getVendingMachineSize()];
-        goods[0] = new Water(0,1.50);
+        goods[0] = new Water(1,1.50);
         goods[1] = new Coffee(1,2.00);
         goods[2] = new FizzyWater(2,1.75);
 

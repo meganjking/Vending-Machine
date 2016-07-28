@@ -10,6 +10,7 @@ public class FizzyWater extends Beverage {
     public FizzyWater(int quantity, double price){
         this.quantity = quantity;
         this.price = price;
+        bodilyBehavior = new BodyThirst();
     }
 
     public String getDescription(){

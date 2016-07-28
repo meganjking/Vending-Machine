@@ -10,6 +10,7 @@ public class Water extends Beverage {
     public Water(int quantity, double price){
         this.quantity = quantity;
         this.price = price;
+        bodilyBehavior = new BodyThirst();
     }
 
     public String  getDescription(){

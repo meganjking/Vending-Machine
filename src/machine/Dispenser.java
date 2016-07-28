@@ -14,6 +14,7 @@ public class Dispenser {
         inventory.removeInventory(selection);
 
         System.out.println("One " + inventory.goods[selection-1].getDescription() + " Dispensed");
+        inventory.goods[selection-1].performBodilyBehavior();
 
     }
 

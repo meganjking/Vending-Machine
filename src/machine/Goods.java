@@ -7,6 +7,7 @@ public abstract class Goods {
     String description;
     int quantity = 0;
     double price;
+    BodilyBehavior bodilyBehavior;
 
     public double getPrice(){
         return price;
@@ -22,6 +23,14 @@ public abstract class Goods {
 
     public void setQuantity(int quantity){
         this.quantity = quantity;
+    }
+
+    public void setBodilyBehavior(BodilyBehavior bb){
+        bodilyBehavior = bb;
+    }
+
+    public void performBodilyBehavior(){
+        bodilyBehavior.bodyFunction();
     }
 
 }
