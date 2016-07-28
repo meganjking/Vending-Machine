@@ -3,7 +3,7 @@ package machine;
 /**
  * Created by Megan on 7/28/2016.
  */
-public class Cookie extends Goods {
+public class Cookie extends Snacks {
 
     public Cookie(int quantity, double price){
         this.quantity = quantity;
