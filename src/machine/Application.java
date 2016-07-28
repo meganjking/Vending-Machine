@@ -24,13 +24,16 @@ public class Application {
 
 // Set up the vending machine
         VendingMachineStuff vendingMachineStuff = new VendingMachineStuff();
-        vendingMachineStuff.setVendingMachineSize(3);
+        vendingMachineStuff.setVendingMachineSize(6);
 
         // Fill up the vending machine
         Goods[] goods = new Goods[vendingMachineStuff.getVendingMachineSize()];
         goods[0] = new Water(0,1.50);
         goods[1] = new Coffee(1,2.00);
         goods[2] = new FizzyWater(2,1.75);
+        goods[3] = new Sandwich(2,3.00);
+        goods[4] = new Cookie(1,1.00);
+        goods[5] = new Chips(3,2.50);
 
         // Set inventory
         Inventory inventory = Inventory.getInstance();
